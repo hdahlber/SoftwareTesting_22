@@ -1,0 +1,16 @@
+digraph TheftAlarmModel
+{
+  DISARMED_OPEN -> DISARMED_OPEN  [label="disarm"];
+  DISARMED_OPEN -> DISARMED_OPEN  [label="arm"];
+  DISARMED_OPEN -> ARMED_CLOSED  [label="closeDoors"];
+  ARMED_CLOSED -> ARMED_OPEN  [label="openDoors"];
+  ARMED_OPEN -> DISARMED_OPEN  [label="disarm"];
+  ARMED_CLOSED -> ARMED_CLOSED  [label="arm"];
+  ARMED_CLOSED -> DISARMED_CLOSED  [label="disarm"];
+  DISARMED_CLOSED -> DISARMED_OPEN  [label="openDoors"];
+  DISARMED_OPEN -> DISARMED_CLOSED  [label="closeDoors"];
+  DISARMED_CLOSED -> DISARMED_CLOSED  [label="disarm"];
+  DISARMED_CLOSED -> ARMED_CLOSED  [label="arm"];
+  ARMED_OPEN -> ARMED_OPEN  [label="arm"];
+  ARMED_OPEN -> ARMED_CLOSED  [label="closeDoors"];
+}
